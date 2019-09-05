@@ -6,8 +6,6 @@ class User:
     user_list = [] # Empty contact list
 
     def __init__(self,username,password):
-
-      # docstring removed for simplicity
-
         self.username = username
         self.password = password
+         #end init cred
