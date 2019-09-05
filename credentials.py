@@ -12,5 +12,14 @@ class Credentials:
         self.username = username
         self.cred_app = cred_app
         self.cred_username = cred_username
-        self.cred_password = cred_password
-    #end init cred
+        self.cred_password = cred_password #end init cred
+   
+    ##### save method to save new object##### 
+
+    def save_credentials(self):
+
+        '''
+        save_credentials method saves credentials objects into cred_list
+        '''
+
+        Credentials.cred_list.append(self)
