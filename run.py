@@ -193,7 +193,51 @@ def main():
                         print(f"New Credential for {cred_app} / User Account : {cred_username}/ Password: {cred_password} created")
                         print ('Press Enter to continue')
                         input() #end choice = a (create Credential)
-                        
+
+                        elif login_choice == "b":
+
+                        print("       Search Credential")
+                        print("     "+"="*20)
+                        print ('\n')
+
+                        app_name = input("Enter App Name:")
+                        found_cred = find_credential(u_name, app_name)
+                        if found_cred:
+                            print(f"Credentials for {found_credential.cred_app} Found and Copied to Clipboard:")
+                            print(f"User Account: {found_credential.cred_username}")
+                            print(f"Password: {found_credential.cred_password}")
+                            to_copy = f"Appname: {found_credential.cred_app} @@ User Account: {found_credential.cred_username}  @@ Password: {found_credential.cred_password}"
+                            pyperclip.copy(to_copy)
+                        else:
+                            print(f"Credentials Not Found for {app_name}!")
+                        print("Press Enter to continue")
+                        input()#end choice = b (Search Credential)
+
+                        elif login_choice == "c":
+                        print("       Display All")
+                        print("     "+"="*20)
+                        print ('\n')
+
+                        if display_all(u_name):
+                            print("Here is a list of all your credentials")
+                            print('\n')
+
+                            for credential in display_all(u_name):
+                                print(f"App Name: {credential.cred_app}")
+                                print(f"User Account: {credential.cred_username}")
+                                print(f"Password: {credential.cred_password}")
+                                print("*"*25)
+
+                            print('\n')
+                        else:
+                            print('\n')
+                            print("You dont seem to have any credentials saved yet.")
+                            print('\n')
+                        print("Press Enter to continue")
+                        input() #end choice = c (Display All)
+                   
+                    
+
                    
 
    
