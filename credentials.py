@@ -31,5 +31,10 @@ class Credentials:
 
         Credentials.cred_list.remove(self)
 
-  ########search account by its credentials###
-   
+  ########Display account by its credentials###
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the credintials list
+        '''
+        return cls.cred_list

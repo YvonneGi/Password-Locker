@@ -72,8 +72,12 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.delete_credentials()  # Deleting a credential object
         self.assertEqual(len(Credentials.cred_list), 1)
 
-#######search_credential method to search for the saved credentials####
-   
+#######display_credential method to display all credentials####
+    def test_display_all_credentials(self):
+        '''
+        method that returns a list of all credentials saved
+        '''
+        self.assertEqual(Credentials.display_credentials(),Credentials.cred_list)
 
 
 if __name__ == '__main__':
