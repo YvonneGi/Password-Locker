@@ -21,3 +21,11 @@ def login_user(username,password):
     Function that finds a user by username/password and returns the user account
     '''
     return User.login_by_userpass(username,password)
+
+#######CREDENTIALS####################
+def create_credentials(username,cred_app,cred_username,cred_password):
+    '''
+    Function to create a new user credentials
+    '''
+    new_credential = Credentials(username,cred_app,cred_username,cred_password)
+    return new_credential
