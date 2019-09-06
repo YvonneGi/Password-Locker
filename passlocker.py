@@ -47,3 +47,9 @@ def find_credential(username):
     Function that finds a credential by username and returns the user credential
     '''
     return Credentials.find_by_username(username)
+
+def display_credentials():
+    '''
+    Function that returns all the saved credentials
+    '''
+    return Credentials.display_credentials()
