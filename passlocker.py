@@ -29,3 +29,11 @@ def create_credentials(username,cred_app,cred_username,cred_password):
     '''
     new_credential = Credentials(username,cred_app,cred_username,cred_password)
     return new_credential
+
+def save_credential(Credentials):
+    '''
+    Function to save credential
+    '''
+    user.save_credential()    
+
+
