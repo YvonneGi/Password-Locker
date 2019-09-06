@@ -95,7 +95,7 @@ def log_menu():
         print("             d. Delete Credential")
         print("             e. Logout")  # end log_menu
 
-# def generate_password(pass_length):
+def generate_password(pass_length):
     '''
     Function to generate a random password with a custom length
     '''
@@ -257,7 +257,13 @@ def main():
                             print(f"Credentials Not Found for {app_name}!")
                             print("Press Enter to continue")
                             input() #end choice = d (Delete Credential)
-                            
+                        else:
+                            print("\033[1;31;40m User Not Found, Try Again! \033[0;0m ")
+                            print("Press Enter to continue")
+                            input()  # end if logged (user authenticated)
+          
+
+
 
                    
 
