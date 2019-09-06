@@ -15,3 +15,9 @@ def save_user(user):
     Function to save user
     '''
     user.save_user()
+
+def login_user(username,password):
+    '''
+    Function that finds a user by username/password and returns the user account
+    '''
+    return User.login_by_userpass(username,password)

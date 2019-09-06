@@ -8,7 +8,6 @@ class User:
     def __init__(self,username,password):
         self.username = username
         self.password = password  #end init cred
-       
 
 ##### save method to save new object##### 
     def save_user(self):
@@ -18,6 +17,7 @@ class User:
         '''
 
         User.user_list.append(self)
+        
 #####search for a user in stored users#####
     @classmethod
     def login_by_userpass(cls, username, password):
