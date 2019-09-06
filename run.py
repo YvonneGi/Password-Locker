@@ -96,12 +96,12 @@ def log_menu():
         print("             e. Logout")  # end log_menu
 
 # def generate_password(pass_length):
-#     '''
-#     Function to generate a random password with a custom length
-#     '''
-#     char = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
-#     gen_pass = "".join(random.choice(char) for _ in range(pass_length))
-#     return gen_pass#end generate_password
+    '''
+    Function to generate a random password with a custom length
+    '''
+    char = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+    gen_pass = "".join(random.choice(char) for _ in range(pass_length))
+    return gen_pass#end generate_password
 
 
 ############MAIN####################################
@@ -164,9 +164,37 @@ def main():
                     if login_choice == "a":
                         session_header(u_name)
 
-                        print("       Add Credential")
+                        print("       Create Credential")
                         print("     "+"="*20)
                         print ('\n')
+                        print("Cred_App:")
+                        app_name = input()
+                        print("     "+"="*10)
+                        print("Cred_username:")
+                        u_account = input()
+                        print("     "+"="*10)
+                        print ('\n')
+                        print("Cred_password:")
+                        pass_choice = ""
+                           while pass_choice !="gp" or pass_choice !="ep":
+                            pass_choice = input("gp. Generate Password \n ep. Enter Password \n Choice: ")
+                            if pass_choice == "ep":
+                                cred_password = input()
+                                break
+                            elif pass_choice == "gp":
+                                pass_length = 0
+                                while pass_length < 8:
+                                    pass_length = int(input("Enter the password length(>=8): "))
+                                cred_password = generate_password(pass_length)
+                                break
+
+                        save_credential(create_credential(u_name,app_name,u_account, pw_account))  # create and save new credential.
+                        print ('\n')
+                        print(f"New Credential for {cred_app} / User Account : {cred_username}/ Password: {cred_password} created")
+                        print ('Press Enter to continue')
+                        input() #end choice = a (create Credential)
+                        
+                   
 
    
 
