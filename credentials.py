@@ -36,18 +36,17 @@ class Credentials:
     @classmethod
     def find_by_username(cls,username):
         '''
-        Method that takes in a number and returns a contact that matches that number.
+        Method that takes in a username and returns a credential that matches that username.
 
         Args:
-            number: Phone number to search for
+            Username: username to search for
         Returns :
-            Contact of person that matches the number.
+            Credential of person that matches the username.
         '''
-
         for credential in cls.cred_list:
             if credential.username == username:
                 return credential
-                
+
   ########Display account by its credentials###
     @classmethod
     def display_credentials(cls):

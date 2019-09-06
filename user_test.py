@@ -17,6 +17,12 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user = User("YvonneGi", "woow")  # create user object
 
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        User.user_list = []
+
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
@@ -32,13 +38,6 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()  # saving the new contact
         self.assertEqual(len(User.user_list), 1)
-  ####### use tearDown method to let app save multiple object into user list####
-
-    def tearDown(self):
-        '''
-        tearDown method that does clean up after each test case has run.
-        '''
-        User.user_list = []
 
 #  test cases for mupltiple saves here####
     def test_save_multiple_user(self):
@@ -47,9 +46,24 @@ class TestUser(unittest.TestCase):
         objects to our user_list
         '''
         self.new_user.save_user()
-        test_user = User("YvonneGi", "woow")  # new contact
+        test_user = User("YvonneGi", "woow") 
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
+
+#### search fora user by username/password#####
+    def test_login_user(self):
+        '''
+        test to check if we can find a user by username/password and display information
+        '''
+
+        self.new_user.save_user()
+        test_user = User("YvonneGi", "woow")
+        test_user.save_user()
+
+        found_user = User.login_by_userpass("YvonneGi", "woow")
+
+        self.assertEqual(found_user.username,test_user.username) #end login_user
+   
 
 
 if __name__ == '__main__':
