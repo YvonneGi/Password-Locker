@@ -235,6 +235,32 @@ def main():
                             print('\n')
                         print("Press Enter to continue")
                         input() #end choice = c (Display All)
+
+                        elif login_choice == "d":
+
+                        print("       Delete Credential")
+                        print("     "+"="*20)
+                        print ('\n')
+
+                        app_name = input("Enter App Name:")
+                        found_credential = find_credential(u_name, app_name)
+                        if found_credential:
+                            print(f"Here are the credentials for {found_credential.cred_app}:")
+                            print(f"User Account: {found_credential.cred_username}")
+                            print(f"Password: {found_credential.cred_password}")
+                            if input("Are you sure you want to delete it? (Y/N)").upper() == "Y":
+                                del_credential(found_credential)
+                                print()
+                            print("Press Enter to continue")
+                            input(f"Credentials for {found_credential.cred_app} deleted.")
+                        else:
+                            print(f"Credentials Not Found for {app_name}!")
+                            print("Press Enter to continue")
+                            input() #end choice = d (Delete Credential)
+                            
+
+                   
+
                    
                     
 
