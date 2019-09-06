@@ -22,6 +22,7 @@ class Credentials:
         '''
 
         Credentials.cred_list.append(self)
+
   ###### delete method to delete credentials when needed####
 
     def delete_credentials(self):
@@ -31,6 +32,22 @@ class Credentials:
 
         Credentials.cred_list.remove(self)
 
+  #####search for a credential in stored credentials#####
+    @classmethod
+    def find_by_username(cls,username):
+        '''
+        Method that takes in a number and returns a contact that matches that number.
+
+        Args:
+            number: Phone number to search for
+        Returns :
+            Contact of person that matches the number.
+        '''
+
+        for credential in cls.cred_list:
+            if credential.username == username:
+                return credential
+                
   ########Display account by its credentials###
     @classmethod
     def display_credentials(cls):

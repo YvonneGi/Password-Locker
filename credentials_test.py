@@ -45,9 +45,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.cred_list), 1)  # end test_save_cred
 
 
-#  test cases for mupltiple saves here####
-
-
+#### test cases for mupltiple saves here####
     def test_save_multiple_credentials(self):
         '''
         test_save_multiple_credential to check if we can save multiple credential
@@ -55,9 +53,9 @@ class TestCredentials(unittest.TestCase):
         '''
         self.new_credential.save_credentials()
         test_credentials = Credentials(
-            "YvonneGi", "Twitter", "Gi", "giii")  # new credential
+            "YvonneGi", "Twitter", "Gi", "giii")  
         test_credentials.save_credentials()
-        self.assertEqual(len(Credentials.cred_list), 2)
+        self.assertEqual(len(Credentials.cred_list), 2)# end of save multiple method
 
 ######### test for delete method###
     def test_delete_credential(self):
@@ -66,18 +64,35 @@ class TestCredentials(unittest.TestCase):
         '''
         self.new_credential.save_credentials()
         test_credentials = Credentials(
-            "YvonneGi", "Twitter", "Gi", "giii")  # new credential
+            "YvonneGi", "Twitter", "Gi", "giii")  
         test_credentials.save_credentials()
 
         self.new_credential.delete_credentials()  # Deleting a credential object
         self.assertEqual(len(Credentials.cred_list), 1)
+
+###############search method to search for stored credentials####
+    def test_find_credential_by_username(self):
+        '''
+        test to check if we can find a credential by username and display information
+        '''
+
+        self.new_credential.save_credentials()
+        test_credential = Credentials("YvonneGi","Twitter","Gi","giii") 
+        test_credential.save_credentials()
+
+        found_credential = Credentials.find_by_username("YvonneGi")
+
+        self.assertEqual(found_credential.cred_app,test_credential.cred_app)
+        self.assertEqual(found_credential.cred_username,test_credential.cred_username)
+        self.assertEqual(found_credential.cred_password,test_credential.cred_password)#end of find method
+
 
 #######display_credential method to display all credentials####
     def test_display_all_credentials(self):
         '''
         method that returns a list of all credentials saved
         '''
-        self.assertEqual(Credentials.display_credentials(),Credentials.cred_list)
+        self.assertEqual(Credentials.display_credentials(),Credentials.cred_list)###display credentials
 
 
 if __name__ == '__main__':
