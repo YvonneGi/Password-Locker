@@ -59,29 +59,28 @@ def main():
   while True:
       print("Use these short codes : ca - create a new account, lo - login,ex -exit ")
       short_code = input('Enter a choice: ').lower()
-		    if short_code=='ex':
-				break
-				elif short_code == 'ca':
+		if short_code=='ex':
+		  break
+		    elif short_code == 'ca':
 					print("-"*60)
 					print(' ')
 					print('To create a new account:')
-            username = input('Enter your Username - ').strip()
-						password = input('Enter your Password - ').strip()
-            save_user(create_user(Username,password))
+          username = input('Enter your Username - ').strip()
+					password = input('Enter your Password - ').strip()
+          save_user(create_user(Username,password))
           print(" ")
 					print(f'New Account Created for: {username} using password: {password}')
             elif short_code == 'li':
 							print("+"*60)
 							print(' ')
 							print('To login, enter your account details:')
-								user_name = input('Enter your Username - ').strip()
-								password = str(input('Enter your password - '))
-								user_exists = login_user(username,password)
-									if user_exists == user_name:
-										print(" ")
-										print(f'Welcome {user_name}. Please choose an option to continue.')
-										print(' ')
-
+							user_name = input('Enter your Username - ').strip()
+							password = str(input('Enter your password - '))
+							user_exists = login_user(username,password)
+								if user_exists == user_name:
+									print(" ")
+									print(f'Welcome {user_name}. Please choose an option to continue.')
+									print(' ')
   while True:
 			print("+"*60)
 			print('Navigation codes: \n cc-Create a Credential \n sc-search credential\n dc-Display Credentials \n dl-delete credential \n copy-Copy Password \n ex-Exit')
@@ -150,7 +149,8 @@ def main():
 
 if __name__ == '__main__':
 	main()
-            
+
+####################################################################################   
 				
 
 
