@@ -1,6 +1,5 @@
 import unittest  # Importing the unittest module
-from credentials import Credentials  # Importing the User class
-
+from credentials import Credentials # Importing the User class
 
 class TestCredentials(unittest.TestCase):
 
@@ -33,8 +32,7 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credential.username, "YvonneGi")
         self.assertEqual(self.new_credential.cred_app, "Twitter")
         self.assertEqual(self.new_credential.cred_username, "Gi")
-        self.assertEqual(self.new_credential.cred_password,
-                         "giii")  # end test_init
+        self.assertEqual(self.new_credential.cred_password,"giii")  # end test_init
 
     def test_save_credentials(self):
         '''

@@ -1,102 +1,66 @@
-#!/usr/bin/env python3.6
+import pyperclip
 from user import User
 from credentials import Credentials
-# import string
-# import random
-# import pyperclip
-# import os
-# def cls():
-#     os.system('cls' if os.name=='nt' else 'clear')
-
-#######USER########
-
-
-	def create_user(username, password):
+######USER######
+def create_user(username, password):
     '''
     Function to create a new user account
     '''
     new_user = User(username, password)
     return new_user  # end create_user
-
-
-	def save_user(user):
+def save_user(user):
     '''
     Function to save user
     '''
     user.save_user()  # end save_user
-
-
-	def login_user(username, password):
+def login_user(username, password):
     '''
     Function that finds a user by username/password and returns the user account
     '''
     return User.login_by_userpass(username, password)  # end login
 
-#######CREDENTIALS####################
-
-
-	def create_credentials(username, cred_app, cred_username, cred_password):
+    ########CREDENTIALS##################
+def create_credentials(username, cred_app, cred_username, cred_password):
     '''
     Function to create a new user credentials
     '''
-    new_credential = Credentials(
-        username, cred_app, cred_username, cred_password)
+    new_credential = Credentials(username, cred_app, cred_username, cred_password)
     return new_credential  # end create_cred
-
-
-	def save_credentials(credential):
+def save_credentials(credential):
     '''
     Function to save credential
     '''
     credential.save_credential()  # end save_cred
-
-
-	def delete_crededential(credential):
-    '''
-    Function to delete a credential
-    '''
-    credential.delete_credential()  # end delete cred
-
-
-	def find_credential(username):
+def find_credential(username):
     '''
     Function that finds a credential by username and returns the user credential
     '''
     return Credentials.find_by_username(username)  # end find cred
-
-
-	def display_credentials():
+def display_credentials():
     '''
     Function that returns all the saved credentials
     '''
     return Credentials.display_credentials()  # end display cred
-
-
-	def generate_password():
-		'''
-		Function to generate a password automatically
-		'''
-		gen_pass = Credential.generate_password()
-		return gen_pass
-
-##########GENERIC################################
-
-############MAIN####################################
-
-
-	def main():
-    print(' ')
-    print("Hello,Welcome to your Password  Locker.")
-
-
-  	while True:
-      	# print(' ')
-				# print("-"*25)
-      	print("Use these short codes : ca - create a new account, lo - login,ex -exit ")
-      	short_code = input('Enter a choice: ').lower().strip()
-			if short_code == 'ex':
-			break
-
+def delete_crededential(credential):
+    '''
+    Function to delete a credential
+    '''
+    credential.delete_credential()  # end delete cred
+# def generate_password():
+# 		'''
+# 		Function to generate a password automatically
+# 		'''
+# 		gen_pass = Credentials.generate_password()
+# 		return gen_pass
+################MAIN###############
+def main():
+  print(' ')
+  print("Hello,Welcome to your Password  Locker.")
+  while True:
+      print("Use these short codes : ca - create a new account, lo - login,ex -exit ")
+      short_code = input('Enter a choice: ').lower()
+		    if short_code=='ex':
+				break
 				elif short_code == 'ca':
 					print("-"*60)
 					print(' ')
@@ -118,7 +82,7 @@ from credentials import Credentials
 										print(f'Welcome {user_name}. Please choose an option to continue.')
 										print(' ')
 
-  	while True:
+  while True:
 			print("+"*60)
 			print('Navigation codes: \n cc-Create a Credential \n sc-search credential\n dc-Display Credentials \n dl-delete credential \n copy-Copy Password \n ex-Exit')
 			short_code = input('Enter a choice: ').lower().strip()
@@ -182,6 +146,11 @@ from credentials import Credentials
 			print("+"*60)
 			print(' ')
 			print('Oops! Wrong option entered. Try again.')
+
+
+if __name__ == '__main__':
+	main()
+            
 				
 
 
@@ -189,13 +158,8 @@ from credentials import Credentials
 
 
 
-if __name__ == '__main__':
-	main()
-            
-           
 
 
-    
 
 
-##################################################################################
+
