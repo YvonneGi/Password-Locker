@@ -118,6 +118,10 @@ def main():
                                         if psw_choice == 'ep':
                                                 print(" ")
                                                 cred_password = input('Enter your password: ')
+                                                save_credential(create_credential(username,cred_app,cred_username,cred_password)) # create and save new credential.
+                                                print (' ')
+                                                print(f"New credential {username}  {cred_app}   {cred_username}   {cred_password} created")
+                                                print ('\n')
                                         elif psw_choice == 'gp':
                                                 s="abcdefghijklmnopqrstuvwxyz0123456789"
                                                 cred_password=''.join(random.choice(s) for _ in range(8))
@@ -132,7 +136,7 @@ def main():
                                                 print("Here is a list of all your credentials:")
                                                 print('\n')
                                                 for credential in display_credentials():
-                                                        print(f"{credential.username} {credential.cred_app} {credential.cred_username}{credential.cred_password}")
+                                                        print(f"{credential.username} {credential.cred_app} {credential.cred_username}  {credential.cred_password}")
                                                         print('\n')
                                         else:
                                                         print('\n')
