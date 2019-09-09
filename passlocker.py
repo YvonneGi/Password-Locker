@@ -58,6 +58,11 @@ def delete_credential(credentials):
     Function to delete a credential
     '''
     credentials.delete_credential()
+def copy_username(username):
+    '''
+    Function to copy a credentials details to the clipboard
+    '''
+    return Credentials.copy_username(username)
 def main():
                 print("Hello Welcome to your Password_locker.")
                 print('\n')
@@ -162,12 +167,12 @@ def main():
                                                                 print(f"Credentials Not Found for {cred_app}!")
                                                                 print("Press Enter to continue")
                                                                 input()  # end choice = d (Delete Credential)
-                # elif short_code == 'cp':
-                #                                 chosen_site = input('Enter the site name for the credential password to copy: ')
-                #                                 copy_credential(chosen_site)
+                                elif short_code == 'cp':
+                                                username = input('Enter the username for the credential to copy: ')
+                                                copy_username(username)
                                                                         
-                # else:
-                #                                         print('Oops! Wrong option entered. Try again.')
+                                                # else:
+                                                #         print('Oops! Wrong option entered. Try again.')
 
 
                                 elif short_code == "ex":
