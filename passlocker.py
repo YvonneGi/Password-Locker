@@ -14,11 +14,6 @@ def save_user(user):
     Function to save account
     '''
     user.save_user()
-                # def login_account(user_name,password):
-                #     '''
-                #     Function that finds a account by username and password
-                #     '''
-                #     return User.login_by_userpass(user_name,password)
 def verify_user(username,password):
     '''
     Function that verifies the existance of the user before creating credentials
@@ -160,11 +155,11 @@ def main():
                                                         print(f"Password: {found_credential.cred_password}")
                                                 if input("Are you sure you want to delete it? (Y/N)").lower() == "Y":
                                                                 delete_credential(found_credential)
-                                                                print()
+                                                                # print()
+                                                                input(f"Credential for {found_credential.cred_app} deleted.")
                                                                 print("Press Enter to continue")
-                                                                input(f"Credentials for {found_credential.cred_app} deleted.")
                                                 else:
-                                                                print(f"Credentials Not Found for {cred_app}!")
+                                                                print(f"Credential Not Found for {cred_app}!")
                                                                 print("Press Enter to continue")
                                                                 input()  # end choice = d (Delete Credential)
                                 elif short_code == 'cp':
